@@ -54,7 +54,7 @@ def main():
         sys.exit(2)
     if action == "init":
         standard_args_check(opts)
-    if action == "track":
+    elif action == "track":
         standard_args_check(opts)
         fname = last
         print(fname)
@@ -70,7 +70,7 @@ def main():
                     assert False, "unhandled option"
         else:
             assert False, "File " + fname + " does not exist."
-    if action == "add-key":
+    elif action == "add-key":
         standard_args_check(o, a)
         key = last
 
