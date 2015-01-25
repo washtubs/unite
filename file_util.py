@@ -18,3 +18,20 @@ class FilteUtil:
     @staticmethod
     def symlink(f):
         pass
+    @staticmethod
+    def extension_search(root, ext):
+        pass
+    @staticmethod
+    def extension_search(root, base, ext):
+        pass
+    @staticmethod
+    def is_under(f, root):
+        pass
+    """
+    f is under root. returns twin where twin is the corresponding file under mirror
+    """
+    @staticmethod
+    def twin(root, mirror, f):
+        #return twin
+        pass
+
