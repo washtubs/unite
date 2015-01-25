@@ -89,7 +89,7 @@ $UNITE_ROOT/
     +--- .canon [*]
     +--- .description [*] (possible extensions: encrypt[], canon[], diff)
     +--- .config [*]
-        hosts, unite_diff, push_cmd, theirs_cmd
+        hosts, unite_diff_save_cmd, push_cmd, theirs_cmd
     |
     +--- devlog/devlog
     +--- devlog/devlog.theirs
