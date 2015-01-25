@@ -56,6 +56,7 @@ shouldn’t happen very often. Lets aim for resolving these issues automatically
 
 # Notes
 
-prior to any global interaction, we will want to ensure that the .description dir is identical. To do this, we will make 
+- [ ] prior to any global interaction, we will want to ensure that the .description dir is identical. To do this, we will make 
 a SHA fingerprint a part of the Description object and use that prior to any and all global exchanges, to ensure they are consistent.
 
+- [ ] canon scripts should be presented as `canon new old`
