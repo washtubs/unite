@@ -13,7 +13,7 @@ Flesh out high level state machine
 
 Internalize .description directory as an object Description 
 * mock up a sample .description directory
-* ~DETERMINE WHETHER MULTIPLE INHERITANCE WILL BE A PROBLEM~
+* ~~determine whether multiple inheritance will be a problem~~
     Will not be a problem as long as:
     1. no two predicates contradict.
     2. any set of predicates in any order canonicalizes to the same description.
