@@ -5,11 +5,14 @@ implemented in python
 
 # TODO
 
-Make an easy way to test. We will need to check lots of mocked up examples and be able to change environments quickly
+Make an easy way to test. We will need to check lots of mocked up examples and be able to change environments quickly.
+Streamlined testing is REALLY important here. We want to be able to run all the tests with different pluggables. so it’s 
+vital they can be automated.
 - [x] describe the basic namespace of a unite directory, plus all relevant environment vars in a single src file. 
+- [ ] use multiple scenarios, and script situations for two live systems
 - [ ] unit tests should be environment aware
 
-Flesh out high level state machine
+- [x] Flesh out high level state machine
 
 Internalize .description directory as an object Description 
 - [ ] mock up a sample .description directory
@@ -39,10 +42,15 @@ Encrypt file using key
 config file reader
 
 validate state:
-- [ ] every file AND directory in local has a twin in mirror directories: global and description
+- [ ] every file AND directory in local has a twin in mirror directories: global and ~~description~~
+    * this is false for .description, the files in description can be completely different, all that matters is 
+    how they *happen* to align, this is true for global though 
 - [ ] no file in local is a symlink
+- [ ] no file in local is hidden (besides reserved folders)
 - [ ] check for contradictory predicates **(right now, this does not exist)**
-- [ ] trim extraneous files in description directory (not critical)
+- [x] ~~trim extraneous files in description directory (not critical)~~ 
+ * not necessary or preferrable, the point of the description dir is to be decoupled from any particular unite dir,
+ so extraneous files are fine, and should be expected
 
 resolve predicates to actions.
 - [ ] encrypt[key1] should find key1 on the local machine and encrypt or decrypt depending on the direction.
@@ -70,17 +78,21 @@ Checked if needed
 # unite directory structure with env
 
 ```
+$UNITE_DIFF
 $UNITE_OBFISCATORS
 $UNITE_PRIVATE_KEYS
 $UNITE_ROOT/
     |
     +--- .global
+    +--- .var (locks, prevent the file monitor from making dangerous asynchronous calls)
     +--- .public-keys [*]
     +--- .canon [*]
-    +--- .description [*]
+    +--- .description [*] (possible extensions: encrypt[], canon[], diff)
     +--- .config [*]
+        hosts, unite_diff, push_cmd, theirs_cmd
     |
     +--- devlog/devlog
+    +--- devlog/devlog.theirs
     |
     +--- encryption/devlog.ts
 
