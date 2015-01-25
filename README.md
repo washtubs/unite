@@ -13,8 +13,12 @@ Flesh out high level state machine
 
 Internalize .description directory as an object Description 
 * mock up a sample .description directory
-* determine whether multiple inheritance will be a problem
+* ~DETERMINE WHETHER MULTIPLE INHERITANCE WILL BE A PROBLEM~
+    Will not be a problem as long as:
+    1. no two predicates contradict.
+    2. any set of predicates in any order canonicalizes to the same description.
 * import .description directory to singleton Description object
+* Description can have a SHA to use as a fingerprint
 * resolve predicates in order (stable) for a given file path
 
 Experiment with tracking .description and .canon in a git repo
@@ -49,3 +53,9 @@ resolve predicates to actions.
 
 Description modification: what to do about conflicts, since these folders will be tracked globally?
 shouldn’t happen very often. Lets aim for resolving these issues automatically in the future, but for the time being, it should not happen too often.
+
+# Notes
+
+prior to any global interaction, we will want to ensure that the .description dir is identical. To do this, we will make 
+a SHA fingerprint a part of the Description object and use that prior to any and all global exchanges, to ensure they are consistent.
+
